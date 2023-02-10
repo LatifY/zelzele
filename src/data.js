@@ -1,5 +1,14 @@
 export const data = [
     {
+		"owner": "zeynep köseoğlu güzel",
+		"name": "alex",
+		"city": "osmaniye",
+		"description": "esenevler mahallesi hasan çenet caddesi bilge apt A blok enkaz altında kalan arkadaşım Bahar Hurma’nın kedisi Alex’e ulaşan olursa beni arayabilir.\nEklenme Tarihi: 2023-02-10 18:49:37",
+		"contact": "+90 (534) 602-2735",
+		"photo": "nophoto",
+		"id": 74
+      },
+    {
         "owner": "Berkan saatçı",
         "name": "Luna",
         "city": "Kahramanmaraş",
