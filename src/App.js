@@ -9,6 +9,11 @@ import AnimalPage from './pages/AnimalPage';
 import Ad from './pages/Ad';
 
 function App() {
+
+  if (isMobile()) {
+    document.body.style.zoom = "75%";
+  }
+
   return (
     <div className="App">
       <Header />
