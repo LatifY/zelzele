@@ -255,7 +255,7 @@ body {
             display: none;
         }
     }
-    height: 350px;
+    height: 360px;
     background-color: $gray;
     border-radius: 24px;
 }
@@ -378,6 +378,8 @@ header {
     }
 
     &-copyright {
+        background-color: $gray;
         margin-top: 15px;
+        padding: 5px;
     }
 }

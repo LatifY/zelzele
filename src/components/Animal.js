@@ -2,6 +2,8 @@ import React from 'react'
 import paw from "../assets/img/paw.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import placeholder from "../assets/img/placeholder.png";
 
 
 export default function Animal({ obj }) {

@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { data } from "../data";
 import paw from "../assets/img/paw.png";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export default function AnimalPage() {
     let { id } = useParams();
@@ -15,7 +16,7 @@ export default function AnimalPage() {
 
     return (
         <div className="animal-page">
-            <img src={obj.photo == "nophoto" ? paw : obj.photo} alt="" />
+            <LazyLoadImage src={obj.photo == "nophoto" ? paw : obj.photo} alt="" />
             <div class="info">
                 <h1>Sevgili dostumuz, <span>{obj.name}</span></h1>
                 <div className="text"><b>Sahibi:</b> {obj.owner}</div>
