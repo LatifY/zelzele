@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import yas from "../assets/img/yas.png"
 
 export default function Footer() {
@@ -22,7 +23,7 @@ export default function Footer() {
             </a>
 
             <br></br>
-            <a href="/kvkk">KVKK</a>
+            <Link to={"/kvkk"}>KVKK</Link>
 
             <div className="footer-copyright">
                 <span className="footer-rights">

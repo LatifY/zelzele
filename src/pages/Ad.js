@@ -80,7 +80,6 @@ export default function Ad() {
                 .then(() => {
                     getDownloadURL(imageRef)
                         .then((url) => {
-                            console.log(url);
                             setURL(url);
                             addAndFinish(url);
                         })

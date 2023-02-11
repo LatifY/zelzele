@@ -4,11 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import placeholder from "../assets/img/placeholder.png";
+import { Link } from 'react-router-dom';
 
 
 export default function Animal({ obj }) {
   return (
-    <a href={"/" + obj["id"]} className='animal'>
+    <Link to={"/" + obj["id"]} className='animal'>
         <div class="images">
             <img src={obj.photo == "nophoto" ? paw : obj.photo} alt="" />
         </div>
@@ -21,6 +22,6 @@ export default function Animal({ obj }) {
             <br></br>
             <div class="contact"><a href={'tel:' + obj.contact}>{obj.contact}</a> &nbsp; <FontAwesomeIcon color='#a3a3a3a3' icon={faPhone}/></div>
         </div>
-    </a>
+    </Link>
   )
 }

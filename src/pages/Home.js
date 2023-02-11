@@ -65,7 +65,6 @@ export default function Home() {
 
     return (
         <>
-            {console.log(ads)}
             <div class="kayip">
                 <h1>Kayıp Hayvan İlanları</h1>
                 <h2>Dostlarımızı unutmayalım ❤</h2>

@@ -1,18 +1,19 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
 import logo from "../assets/img/logo.png"
+import { Link, useLocation } from "react-router-dom";
 
 export default function Header() {
 
+    let location = useLocation()
     return (
         <header>
-            <a href="/"><img src={logo} alt="" /></a>
+            <Link to={"/"}><img src={logo} alt="" /></Link>
             <div className="upper">
                 <div className="menu left">
-                    <a href="/ilan-ver">kayıp hayvan ilanı ver</a>
+                    <Link to={"/ilan-ver"}>kayıp hayvan ilanı ver</Link>
                 </div>
                 <div className="menu right">
-                    <span>iletişim</span>
+                    <span><Link to={"/contact"}>iletişim</Link> </span>
                 </div>
             </div>
 
@@ -28,7 +29,7 @@ export default function Header() {
             </div> */}
             <br></br>
             {
-                window.location.pathname != "/" && (<a href="/">ana menüye dön</a>)
+                location.pathname != "/" && (<Link to={"/"}>ana menüye dön</Link>)
             }
         </header>
     );

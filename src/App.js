@@ -10,6 +10,7 @@ import Ad from "./pages/Ad";
 
 import { ToastContainer } from "react-toastify";
 import KVKK from "./pages/KVKK";
+import Contact from "./pages/Contact";
 
 function App() {
     const isMobile = () => {
@@ -43,18 +44,20 @@ function App() {
                 pauseOnHover
                 draggable
             />
-            <Header />
 
             <BrowserRouter>
+                <Header />
+
                 <Routes>
                     <Route exact path="/" element={<Home />} />
                     <Route exact path="/ilan-ver" element={<Ad />} />
                     <Route exact path="/kvkk" element={<KVKK />} />
+                    <Route exact path="/contact" element={<Contact />} />
                     <Route exact path="/:id" element={<AnimalPage />} />
                 </Routes>
-            </BrowserRouter>
 
-            <Footer />
+                <Footer />
+            </BrowserRouter>
         </div>
     );
 }
