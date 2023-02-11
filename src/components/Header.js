@@ -22,6 +22,10 @@ export default function Header() {
                     adresini ziyaret edin.
                 </a>
             </div>
+            
+            <div className="error">
+                    teknik aksaklıktan ötürü resimler gözükmüyor. yakında düzelir.
+            </div>
             <br></br>
             {
                 window.location.pathname != "/" && (<a href="/">ana menüye dön</a>)
