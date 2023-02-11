@@ -8,9 +8,8 @@ import { v4 as uuidv4 } from "uuid";
 
 import { db } from "../firebase";
 import { collection } from "@firebase/firestore";
-import { data } from "../data";
-import { async } from "@firebase/util";
-import axios from "axios";
+import { Link } from "react-router-dom";
+
 
 export default function Ad() {
     const [owner, setOwner] = useState("");
@@ -248,12 +247,15 @@ export default function Ad() {
                         Fotoğraf Yükle
                     </label>
                     <input
+                        accept="image/*"
                         type="file"
                         id="photo"
                         onChange={handleImageChange}
                         onSubmit={(e) => (e.target.value = null)}
-                        placeholder="za"
                     />
+                    
+                    <span className="kvkk-info">bu formu doldurarak KVKK metnimizi kabul etmiş olursunuz.</span>
+                    
 
                     <input
                         className="send"
@@ -261,6 +263,7 @@ export default function Ad() {
                         value="Gönder"
                         type="submit"
                     />
+
                 </form>
             </div>
         </>
