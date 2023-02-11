@@ -3,14 +3,14 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCPi_pND7R7s_q36olkBNP802Qlx39y7a4",
-  authDomain: "zelzele-a5426.firebaseapp.com",
-  databaseURL: "https://zelzele-a5426-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "zelzele-a5426",
-  storageBucket: "zelzele-a5426.appspot.com",
-  messagingSenderId: "670728612513",
-  appId: "1:670728612513:web:654a0ef332a2d6c4279ee0",
-  measurementId: "G-4HMYYR2ZFJ"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID
 };
 
 const app = initializeApp(firebaseConfig);
