@@ -23,9 +23,9 @@ export default function Header() {
                 </a>
             </div>
             
-            <div className="error">
+            {/* <div className="error">
                     teknik aksaklıktan ötürü resimler gözükmüyor. yakında düzelir.
-            </div>
+            </div> */}
             <br></br>
             {
                 window.location.pathname != "/" && (<a href="/">ana menüye dön</a>)
