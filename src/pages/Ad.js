@@ -21,6 +21,7 @@ export default function Ad() {
     const [ip, setIP] = useState("");
 
     const [disabled, setDisabled] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const [url, setURL] = useState("");
 
@@ -67,6 +68,8 @@ export default function Ad() {
             return false;
         }
 
+        setLoading(true)
+
 
         if (photo != null) {
           if(photo.size > 5242880){
@@ -105,6 +108,7 @@ export default function Ad() {
     };
 
     const formReset = () => {
+      setLoading(false)
       setOwner("");
       setName("");
       setCity("");
@@ -254,7 +258,7 @@ export default function Ad() {
                         onSubmit={(e) => (e.target.value = null)}
                     />
                     
-                    <span className="kvkk-info">bu formu doldurarak KVKK metnimizi kabul etmiş olursunuz.</span>
+                    <span className="ad-info">bu formu doldurarak KVKK metnimizi kabul etmiş olursunuz.</span>
                     
 
                     <input
@@ -263,6 +267,8 @@ export default function Ad() {
                         value="Gönder"
                         type="submit"
                     />
+
+                    {loading && <span className="ad-info">Yükleniyor...</span>} 
 
                 </form>
             </div>
