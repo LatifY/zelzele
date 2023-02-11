@@ -113,6 +113,10 @@ export default function Home() {
                         link="https://deprem.io/"
                     />
                     <Link
+                        title={"İBB Deprem Tahminleri"}
+                        link="https://evimmusait.com/"
+                    />
+                    <Link
                         title={"Evim Müsait"}
                         link="https://evimmusait.com/"
                     />

@@ -98,8 +98,9 @@ export default function Ad() {
                     toast.error("Sunucu kaynaklı bir hata meydana geldi.");
                     return false;
                 });
-        } else {
-            addAndFinish();
+        } 
+        else {
+            addAndFinish("");
         }
 
         setDisabled(false);
