@@ -1,15 +1,15 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
+import logo from "../assets/img/logo.png"
 
 export default function Header() {
 
     return (
         <header>
-                <h1><a href="/">zelzele</a></h1>
-
+            <a href="/"><img src={logo} alt="" /></a>
             <div className="upper">
                 <div className="menu left">
-                    <a href="https://yakinimibul.net/kayip-hayvan-bildir.html">kayıp hayvan ilanı ver</a>
+                    <a href="/ilan-ver">kayıp hayvan ilanı ver</a>
                 </div>
                 <div className="menu right">
                     <span>iletişim</span>

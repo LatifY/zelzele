@@ -1,21 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { onSnapshot, collection, query, orderBy } from "@firebase/firestore";
 import Link from "../components/Linkm";
 import Animal from "../components/Animal";
 
 import harita from "../assets/img/harita.png";
 import { data } from "../data";
 
+import { db } from "../firebase";
+
 export default function Home() {
-    const [ads, setAds] = useState(data);
+    const [ads, setAds] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [adsPerPage] = useState(12);
 
-    let reversed = data.reverse();
-    for (let i = 0; i < reversed.length; i++) {
-        reversed[i]["id"] = i;
-    }
-    let reversed2 = reversed.reverse();
-    console.log(reversed2);
+    useEffect(() => {
+        const q = query(collection(db, "zelzele"), orderBy("createdAt", "desc"));
+
+        onSnapshot(q, (snapshot) => {
+            const datas = snapshot.docs.map((doc) => {
+                const data = doc.data();
+                return { id: doc.id, ...data };
+            });
+
+            setAds(
+                datas.filter((d) => {
+                    return d["active"] == true;
+                })
+            );
+        });
+    }, []);
 
     const indexOfLastPost = currentPage * adsPerPage;
     const indexOfFirstPost = indexOfLastPost - adsPerPage;
@@ -30,8 +43,29 @@ export default function Home() {
         setCurrentPage(pageNumber);
     };
 
+    // const handleDownload = () => {
+    //     for (let i = 0; i < data.length; i++) {
+    //         if (data[i]["photo"] != "nophoto") {
+    //             window.open(data[i]["photo"], '_blank');
+    //         }
+    //     }
+    // };
+
+    // function download(url, filename) {
+    //     fetch(url)
+    //       .then(response => response.blob())
+    //       .then(blob => {
+    //         const link = document.createElement("a");
+    //         link.href = URL.createObjectURL(blob);
+    //         link.download = filename;
+    //         link.click();
+    //     })
+    //     .catch(console.error);
+    //   }
+
     return (
         <>
+            {console.log(ads)}
             <div class="kayip">
                 <h1>Kayıp Hayvan İlanları</h1>
                 <h2>Dostlarımızı unutmayalım ❤</h2>
@@ -63,7 +97,7 @@ export default function Home() {
             <div class="diyorsaniz">
                 <h1>Yararlı Linkler</h1>
                 <div class="links">
-                <Link
+                    <Link
                         className={"ahbap"}
                         title={"Ahbap Yardım"}
                         link="https://ahbap.org/bagisci-ol"
@@ -74,7 +108,7 @@ export default function Home() {
                         link="https://www.afad.gov.tr/depremkampanyasi2"
                     />
                     <Link
-                    className={"depremio"}
+                        className={"depremio"}
                         title={"deprem.io"}
                         link="https://deprem.io/"
                     />
@@ -95,8 +129,6 @@ export default function Home() {
                         title={"Deprem Yardımı"}
                         link="https://depremyardim.com/"
                     />
-
-                    
                 </div>
             </div>
 

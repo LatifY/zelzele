@@ -21,6 +21,9 @@ export default function Footer() {
                 </div>
             </a>
 
+            <br></br>
+            <a href="/kvkk">KVKK</a>
+
             <div className="footer-copyright">
                 <span className="footer-rights">
                     Bu site yardım amaçlı kurulmuş olup, herhangi bir maddi
@@ -28,11 +31,6 @@ export default function Footer() {
                     Sitede paylaşılan bilgiler yardımsever vatandaşların
                     birbirleri ile kolay şekilde iletişim kurabilmelerini
                     sağlamak adına depolanacaktır.
-                </span>
-                <br />
-                <br />
-                <span className="api">
-                    Veritabanındaki tüm bilgiler <a target={"_blank"} href="https://yakinimibul.net/">yakinimibul.net üzerinde depolanmaktadır.</a>
                 </span>
             </div>
         </div>

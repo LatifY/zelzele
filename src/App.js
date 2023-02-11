@@ -8,6 +8,9 @@ import Home from "./pages/Home";
 import AnimalPage from "./pages/AnimalPage";
 import Ad from "./pages/Ad";
 
+import { ToastContainer } from "react-toastify";
+import KVKK from "./pages/KVKK";
+
 function App() {
     const isMobile = () => {
         let check = false;
@@ -31,12 +34,22 @@ function App() {
 
     return (
         <div className="App">
+            <ToastContainer
+                style={{ position: "fixed" }}
+                position="bottom-right"
+                autoClose={2500}
+                closeOnClick
+                pauseOnFocusLoss
+                pauseOnHover
+                draggable
+            />
             <Header />
 
             <BrowserRouter>
                 <Routes>
                     <Route exact path="/" element={<Home />} />
                     <Route exact path="/ilan-ver" element={<Ad />} />
+                    <Route exact path="/kvkk" element={<KVKK />} />
                     <Route exact path="/:id" element={<AnimalPage />} />
                 </Routes>
             </BrowserRouter>
