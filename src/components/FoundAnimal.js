@@ -7,16 +7,16 @@ import placeholder from "../assets/img/placeholder.png";
 import { Link } from 'react-router-dom';
 
 
-export default function Animal({ obj }) {
+export default function FoundAnimal({ obj }) {
   return (
-    <Link to={"/ad/" + obj["id"]} className='animal'>
+    <Link to={"/found/" + obj["id"]} className='animal'>
         <div class="images">
             <img src={obj.photo == "nophoto" ? paw : obj.photo} alt="" />
         </div>
         <div class="info">
-            <div class="name">{obj.name}</div>
+            <div class="name">{obj.name != "" ? obj.name : "İsmi Bilinmiyor"}</div>
             <br></br>
-            <div class="sahip"><b>Sahip Adı:</b> {obj.owner}</div>
+            <div class="sahip"><b>Bulan Adı:</b> {obj.finder}</div>
             <div class="location"><b>Yer: </b> {obj.city}</div>
             <div class="description"><b>Açıklama: </b> {obj.description}</div>
             <br></br>

@@ -10,7 +10,11 @@ export default function Header() {
             <Link to={"/"}><img src={logo} alt="" /></Link>
             <div className="upper">
                 <div className="menu left">
-                    <Link to={"/ilan-ver"}>kayıp hayvan ilanı ver</Link>
+                    <Link to={"/kayip-ilani-ver"}>kayıp hayvan ilanı ver</Link>
+                </div>
+                <div class="menu">
+                <Link to={"/bulunma-ilani-ver"}>bulunan hayvan ilanı ver</Link>
+
                 </div>
                 <div className="menu right">
                     <span><Link to={"/contact"}>iletişim</Link> </span>

@@ -4,17 +4,21 @@ import Link from "../components/Linkm";
 import Animal from "../components/Animal";
 
 import harita from "../assets/img/harita.png";
-import { data } from "../data";
-
 import { db } from "../firebase";
+import FoundAnimals from "../components/FoundAnimals";
 
 export default function Home() {
     const [ads, setAds] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [adsPerPage] = useState(12);
 
+    const [search, setSearch] = useState("");
+
     useEffect(() => {
-        const q = query(collection(db, "zelzele"), orderBy("createdAt", "desc"));
+        const q = query(
+            collection(db, "zelzele"),
+            orderBy("createdAt", "desc")
+        );
 
         onSnapshot(q, (snapshot) => {
             const datas = snapshot.docs.map((doc) => {
@@ -22,13 +26,20 @@ export default function Home() {
                 return { id: doc.id, ...data };
             });
 
-            setAds(
-                datas.filter((d) => {
-                    return d["active"] == true;
-                })
-            );
+            let filteredData = datas.filter((d) => {
+                return d["active"] == true;
+            });
+
+            if (search != "") {
+                filteredData = filteredData.filter(d => {
+                    return d["name"].toLowerCase().includes(search.toLowerCase()) ||
+                      d["city"].toLowerCase().includes(search.toLowerCase());
+                  })
+            }
+
+            setAds(filteredData);
         });
-    }, []);
+    }, [search]);
 
     const indexOfLastPost = currentPage * adsPerPage;
     const indexOfFirstPost = indexOfLastPost - adsPerPage;
@@ -69,6 +80,18 @@ export default function Home() {
                 <h1>Kayıp Hayvan İlanları</h1>
                 <h2>Dostlarımızı unutmayalım ❤</h2>
 
+                <div class="filter">
+                    <label for="filter">Filtre</label>
+                    <br></br>
+                    <input
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                        id="filter"
+                        type="text"
+                        placeholder="Hayvan adı / Şehir"
+                    />
+                </div>
+
                 <div class="animals">
                     {currentAds.map((ad) => (
                         <Animal obj={ad} />
@@ -88,6 +111,11 @@ export default function Home() {
                     ))}
                 </div>
             </div>
+
+            <br></br>
+            <br></br>
+
+            <FoundAnimals />
 
             <br></br>
             <br></br>

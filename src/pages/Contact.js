@@ -3,6 +3,10 @@ import React from 'react'
 export default function Contact() {
   return (
     <div className='contact'>
+        <br></br>
+
+        <br></br>
+
         <h1>İletişim</h1>
         <h2>Siteyle ilgili herhangi bir sıkıntınız olursa çekinmeden yazabilirsiniz. Yardımcı olmaya çalışırım.</h2>
 

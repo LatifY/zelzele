@@ -20,37 +20,37 @@ body {
     overflow-x: hidden;
 }
 
-.animal-page{
+.animal-page {
     display: flex;
     max-width: 80%;
     margin: 0 auto;
     text-align: left;
-    img{
+    img {
         width: 400px;
         height: auto;
         padding: 20px;
     }
 
-    .info{
+    .info {
         font-size: 24px;
         padding: 20px;
-        span{
+        span {
             font-weight: 900;
         }
 
-        .text{
+        .text {
             margin-top: 20px;
         }
     }
 }
 
 @media only screen and (max-width: 1000px) {
-    .animal-page{
+    .animal-page {
         display: block;
     }
-  }
+}
 
-.ad{
+.ad {
     background-color: #fafafa;
     border-radius: 20px;
     padding: 40px;
@@ -58,31 +58,31 @@ body {
     height: auto;
     margin: 0 auto;
     text-align: left;
-    
-    .ad-info{
+
+    .ad-info {
         padding: 15px;
         padding-bottom: 0;
         font-weight: bold;
         margin-top: 5px;
     }
-    
-    .smallinfo{
-            font-size: 12px;
-            color: gray;
-        }
-    h1{
+
+    .smallinfo {
+        font-size: 12px;
+        color: gray;
+    }
+    h1 {
         padding: 15px;
     }
-    form{
+    form {
         width: 100%;
         display: grid;
 
-        label{
+        label {
             margin-top: 15px;
             font-weight: 600;
             margin-left: 15px;
         }
-        input{
+        input {
             padding: 25px;
             background-color: $gray;
             width: 90%;
@@ -92,7 +92,7 @@ body {
             margin-top: 10px;
         }
 
-        textarea{
+        textarea {
             padding: 25px;
             background-color: $gray;
             width: 90%;
@@ -102,7 +102,7 @@ body {
             resize: vertical;
         }
 
-        .send{
+        .send {
             width: 40%;
             height: 100px;
             background-color: black;
@@ -114,7 +114,7 @@ body {
     }
 }
 
-.afet{
+.afet {
     text-align: left;
     margin: 0 auto;
     max-width: 80%;
@@ -122,7 +122,7 @@ body {
         font-size: 32px;
         margin-bottom: 20px;
     }
-    img{
+    img {
         max-width: 100%;
     }
 }
@@ -130,7 +130,7 @@ body {
 .diyorsaniz {
     max-width: 80%;
     margin: 0 auto;
-    
+
     h1 {
         text-align: left;
 
@@ -139,7 +139,7 @@ body {
         }
     }
 
-    .links{
+    .links {
         margin-top: 20px;
         text-align: left;
         display: grid;
@@ -147,56 +147,53 @@ body {
         grid-column-gap: 10px;
         grid-row-gap: 10px;
 
-
-
-        .link{
-
-            a{
+        .link {
+            a {
                 color: black;
             }
             margin-top: 15px;
             max-width: 300px;
             min-width: 300px;
             height: 50px;
-            transition: 300ms all;            
+            transition: 300ms all;
             background-color: $gray;
             border-radius: 40px;
             display: flex;
             align-items: center;
             position: relative;
-            .title{
+            .title {
                 margin-left: 20px;
                 font-size: 24px;
                 font-weight: 700;
             }
 
-            .icon{
+            .icon {
                 position: absolute;
                 right: 30px;
                 top: 18px;
             }
-            &:hover{
+            &:hover {
                 font-size: larger;
             }
         }
 
-        .ahbap{
+        .ahbap {
             background-color: #7fc349;
-            a{
-                color: white;
-            }
-        }        
-        
-        .depremio{
-            background-color: #4765ff;
-            a{
+            a {
                 color: white;
             }
         }
 
-        .afad{
+        .depremio {
+            background-color: #4765ff;
+            a {
+                color: white;
+            }
+        }
+
+        .afad {
             background-color: #0054a6;
-            a{
+            a {
                 color: white;
             }
         }
@@ -207,6 +204,24 @@ body {
     text-align: left;
     margin: 0 auto;
     max-width: 80%;
+
+    .filter {
+        margin-top: 20px;
+        label {
+            padding: 10px;
+            font-weight: 800;
+        }
+
+        input {
+            width: 300px;
+            margin-top: 5px;
+            background-color: $gray;
+            border-radius: 20px;
+            padding: 15px;
+            font-weight: 700;
+            font-size: 16px;
+        }
+    }
 
     h1 {
         font-size: 32px;
@@ -220,20 +235,20 @@ body {
     .animals {
         margin-top: 20px;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
         grid-column-gap: 10px;
         grid-row-gap: 10px;
     }
 }
 
-.nav{
+.nav {
     margin-top: 50px;
     display: flex;
     text-align: center;
 
-    .num{
+    .num {
         cursor: pointer;
-    text-align: center;
+        text-align: center;
         justify-content: center;
         align-items: center;
         margin: 10px;
@@ -243,27 +258,28 @@ body {
         background-color: $gray;
         border-radius: 50%;
 
-        span{
+        span {
             position: absolute;
             top: 5px;
             right: 12px;
         }
     }
 
-    .active{
+    .active {
         background-color: rgb(0, 0, 0);
         color: white;
     }
-
-    
 }
 
 .animal {
-    .images{
+    box-shadow: -1px 0px 49px -20px rgba(0,0,0,0.1);
+    -webkit-box-shadow: -1px 0px 49px -20px rgba(0,0,0,0.1);
+    -moz-box-shadow: -1px 0px 49px -20px rgba(0,0,0,0.1);
+    .images {
         position: relative;
         top: 0;
         max-width: 100%;
-        height: 250px;
+        height: 300px;
     }
     img {
         object-fit: cover;
@@ -281,12 +297,12 @@ body {
             display: none;
         }
     }
-    height: 400px;
+    height: 460px;
     background-color: $gray;
     border-radius: 24px;
 }
-.kvkk{
-    h1{
+.kvkk {
+    h1 {
         margin-top: 20px;
     }
     padding: 15px;
@@ -303,9 +319,10 @@ header {
         font-weight: 900;
     }
 
-    img{
+    img {
         height: 120px;
         margin: 0 auto;
+        padding-left: 30px;
     }
 
     .upper {
@@ -316,10 +333,9 @@ header {
         display: flex;
 
         .menu {
-            font-size: 28px;
             font-weight: 800;
             padding: 30px;
-            font-size: 26px;
+            font-size: 20px;
             text-align: center;
         }
     }
@@ -327,11 +343,9 @@ header {
     .info {
         font-size: 20px;
         background-color: $gray;
-        border-radius: 40px;
         min-width: 30%;
         margin: 0 auto;
     }
-
 
     .error {
         font-size: 15px;
@@ -355,13 +369,13 @@ header {
     margin-bottom: 20px;
     margin-top: 60px;
 
-    .api{
+    .api {
         font-size: smaller;
         font-weight: 400;
     }
 
     &-credit {
-    color: black;
+        color: black;
 
         height: 54px;
         width: 200px;

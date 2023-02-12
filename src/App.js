@@ -7,10 +7,12 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import AnimalPage from "./pages/AnimalPage";
 import Ad from "./pages/Ad";
+import FoundAd from "./pages/FoundAd";
 
 import { ToastContainer } from "react-toastify";
 import KVKK from "./pages/KVKK";
 import Contact from "./pages/Contact";
+import FoundAnimalPage from "./pages/FoundAnimalPage";
 
 function App() {
     const isMobile = () => {
@@ -50,10 +52,12 @@ function App() {
 
                 <Routes>
                     <Route exact path="/" element={<Home />} />
-                    <Route exact path="/ilan-ver" element={<Ad />} />
+                    <Route exact path="/kayip-ilani-ver" element={<Ad />} />
+                    <Route exact path="/bulunma-ilani-ver" element={<FoundAd />} />
                     <Route exact path="/kvkk" element={<KVKK />} />
                     <Route exact path="/contact" element={<Contact />} />
-                    <Route exact path="/:id" element={<AnimalPage />} />
+                    <Route exact path="/ad/:id" element={<AnimalPage />} />
+                    <Route exact path="/found/:id" element={<FoundAnimalPage />} />
                 </Routes>
 
                 <Footer />
