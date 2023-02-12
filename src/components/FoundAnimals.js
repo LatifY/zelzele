@@ -55,6 +55,7 @@ export default function FoundAnimals() {
     return (
         <div class="kayip">
             <h1>Bulunan Hayvan İlanları</h1>
+            <h2>Çevrede bulunan dostlarımız ❤</h2>
 
             <div class="filter">
                 <label for="filter">Filtre</label>
